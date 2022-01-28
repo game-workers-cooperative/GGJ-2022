@@ -8,3 +8,4 @@
 modulate = Color( 0, 0, 0, 1 )
 self_modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 41, 237 )
+state = 1
