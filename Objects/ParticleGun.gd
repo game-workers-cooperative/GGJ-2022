@@ -10,7 +10,7 @@ var count = 0
 var wait_time = 0.0
 
 func _ready():
-	pass
+	add_to_group("drag")
 	
 func _physics_process(delta):
 	wait_time -= delta
