@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Sprites/wave.png" type="Texture" id=1]
 [ext_resource path="res://Objects/Wave.gd" type="Script" id=2]
+
+[sub_resource type="PhysicsMaterial" id=4]
+bounce = 1.0
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 4.0
@@ -55,7 +58,10 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1 )
 }
 
-[node name="Wave" type="RigidBody2D"]
+[node name="Wave" type="RigidBody2D" groups=["waves"]]
+collision_layer = 2
+collision_mask = 2
+physics_material_override = SubResource( 4 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
