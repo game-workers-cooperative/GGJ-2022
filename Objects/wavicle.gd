@@ -47,7 +47,29 @@ func _physics_process(delta):
 	if ray.is_colliding():
 		if ray.get_collider().name == "SplitterArea":
 			split()
+		if ray.get_collider().name == "RefractGlassArea":
+			refract()
 			
+func refract():
+	if is_wave:
+		cooldown = 50
+		var n = ray.get_collision_normal().normalized()
+		var d = linear_velocity
+		var r = d - 2.0*d.dot(n)*n
+		linear_velocity=Vector2.ZERO
+		apply_central_impulse(r.normalized() * speed)
+		var new_wave = wavicle.instance()
+		var p = ray.get_collision_point() - (n * 10.0)
+		var theta = d.angle_to(n)
+		var v = asin(1.0*sin(theta))
+		new_wave.position = p
+		get_tree().current_scene.call_deferred("add_child",new_wave)
+		new_wave.is_wave = true
+		new_wave.cooldown = 50
+		new_wave.linear_velocity = Vector2.ZERO
+		new_wave.apply_central_impulse(Vector2(cos(v), -sin(v)) * speed)
+	else:
+		queue_free()
 
 func split():
 	cooldown = 50
@@ -56,16 +78,21 @@ func split():
 	var r = d - 2.0*d.dot(n)*n
 	linear_velocity=Vector2.ZERO
 	apply_central_impulse(r.normalized() * speed)
-	var new_wave = wavicle.instance()
-	var p = ray.get_collision_point() - (n * 10.0)
-	var theta = d.angle_to(n)
-	var v = asin(1.0*sin(theta))
+	
+	if is_wave:
+		var new_wave = wavicle.instance()
+		var p = ray.get_collision_point() - (n * 10.0)
+		var theta = d.angle_to(n)
+		var v = asin(1.0*sin(theta))
 
-	new_wave.position = p
-	get_tree().current_scene.call_deferred("add_child",new_wave)
-	new_wave.is_wave = true
-	new_wave.apply_central_impulse(Vector2(cos(v), -sin(v)) * speed)
-	new_wave.cooldown = 50
+		new_wave.position = p
+		get_tree().current_scene.call_deferred("add_child",new_wave)
+		new_wave.is_wave = true
+		new_wave.cooldown = 50
+		new_wave.linear_velocity = Vector2.ZERO
+		new_wave.apply_central_impulse(Vector2(cos(v), -sin(v)) * speed)
+		
+		
 	
 
 func change_state(value: bool = !is_wave) -> void:

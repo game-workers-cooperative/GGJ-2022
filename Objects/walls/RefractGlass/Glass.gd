@@ -1,14 +1,12 @@
-extends Area2D
+extends StaticBody2D
 
-func _on_Glass_body_entered(body):
-	if body.is_in_group("waves") == false: return
+export (PackedScene) var wave = preload("res://Objects/wavicle.tscn")
+export var Destroy : String
+export var split_waves : bool
+onready var point = global_position
 
-	var velocity : Vector2
-	velocity.x = cos(rotation)
-	velocity.y = sin(rotation)
+func _ready():
+	pass
 
-	if velocity > Vector2.ZERO:
-		body.apply_impulse(Vector2.ZERO, (velocity)*body.speed / 2)
-	else:
-		body.apply_impulse(Vector2.ZERO, (-velocity)*body.speed / 2)
-	
+func _integrate_forces(state): 
+	state.transform[2] = point
