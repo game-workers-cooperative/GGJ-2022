@@ -1,4 +1,7 @@
 extends Node2D
+#for drag and drop
+export var movable:= false
+export var spinable:= true
 
 onready var wavicle = $ResourcePreloader.get_resource("wavicle")
 export var switch := true
