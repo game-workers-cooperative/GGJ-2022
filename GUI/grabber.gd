@@ -1,5 +1,5 @@
 extends Area2D
-var timer = 1000
+var timer = -1
 var block = null
 var drag_speed:= 100
 var drag_velocity := Vector2.ZERO

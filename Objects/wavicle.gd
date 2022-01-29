@@ -5,6 +5,7 @@ export var speed = 100.0
 var is_wave := false
 
 func _ready():
+	add_to_group("wavicle")
 	apply_impulse(Vector2.ZERO, (velocity.rotated(rotation))*speed)
 	if is_wave:
 		$particle.set_visible(false)

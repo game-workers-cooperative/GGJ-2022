@@ -2,7 +2,7 @@ extends Node2D
 #for grabber
 export var movable:= false
 export var spinable:= true
-var description:="Source: emits particles and/or waves"
+var description:="Source: emits wavicles"
 
 export var switch := true
 export var is_wave := false
