@@ -20,8 +20,8 @@ func _physics_process(delta):
 	if is_wave:
 		scale = Vector2.ONE*(1+sin(4*clock)*0.25)
 
-func change_state() -> void:
-	is_wave = !is_wave
+func change_state(value: bool = !is_wave) -> void:
+	is_wave = value
 	
 	$particle.set_visible(!is_wave)
 	$particle_shape.disabled = is_wave
