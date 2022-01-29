@@ -2,7 +2,7 @@ extends RigidBody2D
 
 #for grabber
 export var movable:= false
-export var spinable:= true
+export var spinable:= false
 var description:="wall: block wavicles"
 
 var wave = preload("res://Objects/wavicle.tscn")
