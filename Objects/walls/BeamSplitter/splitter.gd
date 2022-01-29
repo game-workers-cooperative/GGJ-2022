@@ -1,4 +1,10 @@
 extends RigidBody2D
+
+#for grabber
+export var movable:= false
+export var spinable:= true
+var description:="wave splitter: 1 wave in, 2 waves out"
+
 var wave = preload("res://Objects/wavicle.tscn")
 onready var point = global_position
 
