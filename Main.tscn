@@ -1,63 +1,32 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://GUI/GUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Source.tscn" type="PackedScene" id=2]
 [ext_resource path="res://level.gd" type="Script" id=3]
 [ext_resource path="res://Objects/goal.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Objects/walls/BeamSplitter/WaveSplitter.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/Flipper.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/walls/Foam/Foam.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Objects/walls/Wall.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Objects/walls/mirror/Mirror.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Objects/walls/RefractGlass/Glass.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Objects/walls/BeamSplitter/splitter.gd" type="Script" id=10]
-[ext_resource path="res://Objects/Flipper.tscn" type="PackedScene" id=11]
-
-[sub_resource type="PhysicsMaterial" id=2]
-friction = 0.0
-bounce = 1.0
 
 [node name="Main" type="Node2D"]
 
 [node name="Control" parent="." instance=ExtResource( 1 )]
-rect_scale = Vector2( 2, 2 )
 
 [node name="level" type="Node2D" parent="."]
 script = ExtResource( 3 )
 
 [node name="Source" parent="level" instance=ExtResource( 2 )]
 self_modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 384, 672 )
-rotation = -0.698132
+position = Vector2( 192, 376 )
+rotation = -0.785398
 switch = true
 
 [node name="goal" parent="level" instance=ExtResource( 4 )]
-position = Vector2( 1125, 56 )
+position = Vector2( 544, 40 )
 rotation = -0.660023
 switch = true
 
-[node name="WaveSplitter" parent="level" instance=ExtResource( 5 )]
-position = Vector2( 528, 576 )
-linear_damp = -1.0
-angular_damp = -1.0
-
-[node name="Mirror" parent="level" instance=ExtResource( 8 )]
-position = Vector2( 432, 480 )
-physics_material_override = SubResource( 2 )
-linear_damp = -1.0
-angular_damp = -1.0
-script = ExtResource( 10 )
-
-[node name="Glass" parent="level" instance=ExtResource( 9 )]
-position = Vector2( 600, 456 )
+[node name="Flipper" parent="level" instance=ExtResource( 5 )]
+position = Vector2( 384, 192 )
 
 [node name="Foam" parent="level" instance=ExtResource( 6 )]
-position = Vector2( 424, 392 )
-linear_damp = -1.0
-angular_damp = -1.0
-script = ExtResource( 10 )
-
-[node name="Wall" parent="level" instance=ExtResource( 7 )]
-position = Vector2( 600, 368 )
-
-[node name="Flipper" parent="level" instance=ExtResource( 11 )]
-position = Vector2( 480, 592 )
+position = Vector2( 296, 281 )

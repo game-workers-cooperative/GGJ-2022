@@ -26,7 +26,8 @@ func _physics_process(delta):
 
 func fire(is_wave:=false):
 	var child = wavicle.instance()
-	child.velocity = Vector2.RIGHT.rotated(rotation)
+	#p.set_as_toplevel(true)
+	child.rotation = rotation
 	child.is_wave = is_wave
 	owner.add_child(child)
 	child.global_position = $Position2D.global_position
