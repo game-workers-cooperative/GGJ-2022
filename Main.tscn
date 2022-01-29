@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://GUI/GUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Source.tscn" type="PackedScene" id=2]
 [ext_resource path="res://level.gd" type="Script" id=3]
 [ext_resource path="res://Objects/goal.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objects/Flipper.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Objects/walls/Foam/Foam.tscn" type="PackedScene" id=6]
 
 [node name="Main" type="Node2D"]
 
@@ -27,6 +26,3 @@ switch = true
 
 [node name="Flipper" parent="level" instance=ExtResource( 5 )]
 position = Vector2( 384, 192 )
-
-[node name="Foam" parent="level" instance=ExtResource( 6 )]
-position = Vector2( 296, 281 )
