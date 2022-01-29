@@ -1,4 +1,8 @@
 extends Area2D
+#for grabber
+export var movable:= false
+export var spinable:= false
+var description:="flipper: switch wavicle's state"
 
 func _ready() -> void:
 	pass
