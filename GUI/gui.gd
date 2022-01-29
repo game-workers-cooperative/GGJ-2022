@@ -2,7 +2,6 @@ extends Control
 onready var map = get_tree()
 
 func ready():
-	#set_as_toplevel(true)
 	clear()
 
 func _input(_event):
@@ -23,7 +22,6 @@ func makers():
 func start():
 	clear()
 	$"main menu".visible = true
-	#map.set_pause(true)
 
 func pause():
 	clear()
