@@ -1,12 +1,13 @@
 extends Node2D
-#for drag and drop
+#for grabber
 export var movable:= false
 export var spinable:= true
+var description:="Source: emits wavicles"
 
-onready var wavicle = $ResourcePreloader.get_resource("wavicle")
 export var switch := true
 export var is_wave := false
-var count = 0
+
+onready var wavicle = $ResourcePreloader.get_resource("wavicle")
 var wait_time = 0.0
 
 func _ready():
@@ -17,9 +18,9 @@ func _physics_process(delta):
 	if wait_time <0:
 		fire(is_wave)
 		if is_wave:
-			wait_time = 0.2
+			wait_time = 0.3
 		else:
-			wait_time = 0.1
+			wait_time = 0.15
 		if switch:
 			is_wave = !is_wave
 
