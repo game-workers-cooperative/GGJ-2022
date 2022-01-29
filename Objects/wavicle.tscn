@@ -12,6 +12,7 @@ radius = 4.0
 height = 4.0
 
 [node name="wavicle" type="RigidBody2D"]
+collision_layer = 2
 script = ExtResource( 1 )
 
 [node name="particle" type="Sprite" parent="."]

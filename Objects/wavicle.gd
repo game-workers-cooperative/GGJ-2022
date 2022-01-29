@@ -5,6 +5,7 @@ export var speed = 100.0
 var is_wave := false
 
 func _ready():
+	set_bounce(1)
 	add_to_group("wavicle")
 	apply_impulse(Vector2.ZERO, (velocity.rotated(rotation))*speed)
 	if is_wave:
@@ -18,7 +19,14 @@ var clock :=0.0
 func _physics_process(delta):
 	clock += delta
 	if is_wave:
+		add_to_group('wave')
+		if(is_in_group('particle')):
+			remove_from_group('particle')
 		scale = Vector2.ONE*(1+sin(4*clock)*0.25)
+	else:
+		add_to_group('particle')
+		if(is_in_group('wave')):
+			remove_from_group('wave')
 
 func change_state(value: bool = !is_wave) -> void:
 	is_wave = value
@@ -30,3 +38,8 @@ func change_state(value: bool = !is_wave) -> void:
 
 func _screen_exited():
 	queue_free()
+
+
+
+func _on_wavicle_body_entered(body):
+	print(body)

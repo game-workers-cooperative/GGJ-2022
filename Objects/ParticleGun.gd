@@ -20,7 +20,7 @@ func _physics_process(delta):
 		if is_wave:
 			wait_time = 0.3
 		else:
-			wait_time = 0.15
+			wait_time = 3.0
 		if switch:
 			is_wave = !is_wave
 
