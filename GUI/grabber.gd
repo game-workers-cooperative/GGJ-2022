@@ -12,7 +12,7 @@ func _input(event):
 	if Input.is_action_just_pressed("left_mouse")or Input.is_action_just_pressed("right_mouse"):
 		$cursor/tutorial.visible = false
 	if event is InputEventMouseMotion:
-		cursor.global_position = event.global_position
+		cursor.global_position = get_global_mouse_position()
 		if timer <5:
 			timer = -1
 
@@ -26,6 +26,7 @@ func _physics_process(delta):
 	#drag
 	if Input.get_action_strength("left_mouse"):
 		if block != null and block.get("movable"):
+			print(block)
 			drag_velocity =block.global_position.direction_to(cursor.global_position)
 			drag_velocity *= delta*drag_speed
 			block.global_position += drag_velocity
@@ -39,6 +40,7 @@ var text =""
 func _body_entered(body):
 	if body.is_in_group("drag"):
 		block = body
+		print(block)
 		timer = 30
 		$cursor/tutorial.text = block.get("description")
 func _body_exited(body):
