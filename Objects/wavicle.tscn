@@ -7,9 +7,8 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 4.0
 
-[sub_resource type="CapsuleShape2D" id=2]
-radius = 4.0
-height = 4.0
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 5, 5 )
 
 [node name="wavicle" type="RigidBody2D"]
 collision_layer = 2
@@ -23,11 +22,19 @@ texture = ExtResource( 2 )
 
 [node name="particle_shape" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+disabled = true
 
 [node name="wave_shape" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 rect = Rect2( -5, -5, 10, 10 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( 1, 0 )
+enabled = true
+cast_to = Vector2( 10, 0 )
+collide_with_areas = true
+collide_with_bodies = false
 
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_screen_exited"]

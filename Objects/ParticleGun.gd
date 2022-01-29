@@ -18,9 +18,9 @@ func _physics_process(delta):
 	if wait_time <0:
 		fire(is_wave)
 		if is_wave:
-			wait_time = 0.3
+			wait_time = 1.0
 		else:
-			wait_time = 3.0
+			wait_time = 1.0
 		if switch:
 			is_wave = !is_wave
 

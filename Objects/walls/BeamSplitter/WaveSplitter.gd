@@ -26,17 +26,19 @@ func _integrate_forces(state):
 
 
 func _on_Area2D_body_entered(body):
-	
-	if body.is_in_group('wave'):
+	pass
+	#if body.is_in_group('wave'):
 		#Make "split" wave
-		var spawn_point = body.global_position + ((body.velocity) * 35)
+		#var spawn_point = body.global_position + ((body.velocity) * 35)
 
 #		print(atan2(body.velocity.y, body.velocity.y))
-		var new_wave = wave.instance()
-		print(self.get_rotation())
-		new_wave.set_rotation((atan2(body.velocity.y, body.velocity.y)) + self.get_rotation())
+		#var new_wave = wave.instance()
+		#print(self.get_rotation())
+		#new_wave.set_rotation((atan2(body.velocity.y, body.velocity.y)) + self.get_rotation())
 		#(new_wave.get_rotation())
-		new_wave.is_wave = true
-		get_tree().current_scene.call_deferred("add_child",new_wave)
-		new_wave.global_position = spawn_point
+		#new_wave.is_wave = true
+		#get_tree().current_scene.call_deferred("add_child",new_wave)
+		#new_wave.global_position = spawn_point
+		
+		
 

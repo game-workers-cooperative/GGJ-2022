@@ -18,11 +18,14 @@ position = Vector2( 650, 187 )
 
 [node name="Source" parent="level" instance=ExtResource( 9 )]
 position = Vector2( 62, 290 )
-rotation = -0.806342
 collision_layer = 2
 is_wave = true
 
 [node name="WaveSplitter" parent="level" instance=ExtResource( 5 )]
 position = Vector2( 172, 206 )
-rotation = -0.575959
+rotation = -0.916298
 split_waves = true
+
+[node name="WaveSplitter2" parent="level" instance=ExtResource( 5 )]
+position = Vector2( 283, 295 )
+rotation = 1.309
