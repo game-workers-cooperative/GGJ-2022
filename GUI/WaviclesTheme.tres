@@ -3,7 +3,7 @@
 [ext_resource path="res://GUI/MortalWaveFont.tres" type="DynamicFont" id=1]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0, 0, 0, 1 )
+bg_color = Color( 0.109804, 0.109804, 0.141176, 1 )
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1

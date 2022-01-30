@@ -95,6 +95,10 @@ var story = {
 			{
 				'speaker' : 'Output',
 				'text' : 'this is u right?'
+			},
+			{
+				'speaker' : '',
+				'text': 'res://Sprites/Story/supermarket-edit.png'
 			}
 		]
 	},
@@ -593,24 +597,45 @@ var story = {
 		]
 	},
 }
+var scrollable = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	show_scene(1)
+	show_scene(5)
+
+func _process(delta):
+	if !scrollable:
+		# move to bottom automatically
+		$Chat/MessageScroller.scroll_vertical = $Chat/MessageScroller.get_v_scrollbar().max_value
+
+		scrollable = true
 
 func advance_chat():
 	# add the speaker
 	var speaker = Label.new()
 	speaker.text = story[current_scene]['chat'][current_message]['speaker']
+	if speaker.text != 'Input' and speaker.text != 'Sent':
+		speaker.align = Label.ALIGN_RIGHT
+	speaker.uppercase = true
 	$Chat/MessageScroller/Messages.add_child(speaker)
 
-	# add the label
-	var text = Label.new()
-	text.text = story[current_scene]['chat'][current_message]['text']
-	$Chat/MessageScroller/Messages.add_child(text)
+	# add the label or image
+	var message = story[current_scene]['chat'][current_message]['text']
+	var directory = Directory.new();
+	if directory.file_exists(message):
+		var rect = TextureRect.new()
+		rect.texture = load(message)
+		$Chat/MessageScroller/Messages.add_child(rect)
+	else:
+		var text = Label.new()
+		text.text = message
+		text.autowrap = true
+		text.rect_min_size.x = 525
+		if speaker.text != 'Input' and speaker.text != 'Sent':
+			text.align = Label.ALIGN_RIGHT
+		$Chat/MessageScroller/Messages.add_child(text)
 
-	# move to bottom automatically
-	$Chat/MessageScroller.scroll_vertical = $Chat/MessageScroller.get_v_scrollbar().max_value
+	scrollable = false
 
 func show_scene(scene):
 	# set current scene

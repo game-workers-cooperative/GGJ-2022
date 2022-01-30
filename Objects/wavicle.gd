@@ -15,11 +15,11 @@ func _ready():
 	if is_wave:
 		$particle.set_visible(false)
 		$particle_shape.disabled = true
-		
+
 	else:
 		$wave.set_visible(false)
 		$wave_shape.disabled = true
-		
+
 
 var clock :=0.0
 func _physics_process(delta):
@@ -52,8 +52,8 @@ func _physics_process(delta):
 			refract()
 		if ray.get_collider().name == "Gate":
 			queue_free()
-	
-			
+
+
 func refract():
 	if is_wave:
 		cooldown = 50
@@ -83,7 +83,7 @@ func split():
 	var r = d - 2.0*d.dot(n)*n
 	linear_velocity=Vector2.ZERO
 	apply_central_impulse(r.normalized() * speed)
-	
+
 	if is_wave:
 		var new_wave = wavicle.instance()
 		var p = ray.get_collision_point() - (n * 10.0)
@@ -100,7 +100,7 @@ func split():
 
 func change_state(value: bool = !is_wave) -> void:
 	is_wave = value
-	
+
 	$particle.set_visible(!is_wave)
 	$particle_shape.disabled = is_wave
 	$wave.set_visible(is_wave)
