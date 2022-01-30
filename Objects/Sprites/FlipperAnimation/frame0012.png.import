@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/frame0012.png-7df6f2ee06ce259a968704417eecf40f.stex"
+path="res://.import/frame0012.png-6cfc4ae80673aa8cba593b62b29cc540.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/FlipperAnimation/frame0012.png"
-dest_files=[ "res://.import/frame0012.png-7df6f2ee06ce259a968704417eecf40f.stex" ]
+source_file="res://Objects/Sprites/FlipperAnimation/frame0012.png"
+dest_files=[ "res://.import/frame0012.png-6cfc4ae80673aa8cba593b62b29cc540.stex" ]
 
 [params]
 
@@ -28,7 +28,6 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
-process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=false

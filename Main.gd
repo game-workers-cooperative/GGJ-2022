@@ -5,7 +5,7 @@ func _ready():
 	$Control.start()
 
 func change_level(index):
-	if index < lv_pool.size(): 
+	if index < lv_pool.size():
 		var levels=preloader.get_children()
 		if levels.size()>0:
 			levels[0].queue_free()#clear old levels

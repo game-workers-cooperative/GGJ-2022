@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/frame0004.png-5a14067b50cc9b69968586dd7a6d5059.stex"
+path="res://.import/un-edited.png-e3bc9e35385d1816d3f62402b82f657c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objects/Sprites/FlipperAnimation/frame0004.png"
-dest_files=[ "res://.import/frame0004.png-5a14067b50cc9b69968586dd7a6d5059.stex" ]
+source_file="res://Sprites/Story/un-edited.png"
+dest_files=[ "res://.import/un-edited.png-e3bc9e35385d1816d3f62402b82f657c.stex" ]
 
 [params]
 
