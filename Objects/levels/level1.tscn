@@ -14,13 +14,14 @@ z_index = -4
 script = ExtResource( 14 )
 
 [node name="Flipper" parent="." instance=ExtResource( 3 )]
-position = Vector2( 864, 384 )
+position = Vector2( 983, 568 )
 
 [node name="goal" parent="." instance=ExtResource( 4 )]
 position = Vector2( 784, 512 )
 
 [node name="Source" parent="." instance=ExtResource( 5 )]
-position = Vector2( 608, 376 )
+position = Vector2( 612, 431 )
+rotation = 0.171042
 collision_layer = 2
 is_wave = true
 
@@ -30,8 +31,8 @@ rotation = -0.916298
 split_waves = true
 
 [node name="WaveSplitter2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 608, 592 )
-rotation = 1.309
+position = Vector2( 700, 450 )
+rotation = 1.02451
 
 [node name="Glass" parent="." instance=ExtResource( 1 )]
 position = Vector2( 384, 528 )

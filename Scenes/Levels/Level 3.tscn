@@ -127,13 +127,11 @@ rotation = 1.5708
 [node name="Source" parent="." instance=ExtResource( 3 )]
 position = Vector2( 201, 262 )
 spinable = false
-is_wave = false
 
 [node name="Source2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 296, 130 )
 rotation = 1.5708
 spinable = false
-is_wave = false
 
 [node name="goal" parent="." instance=ExtResource( 2 )]
 position = Vector2( 649, 134 )
