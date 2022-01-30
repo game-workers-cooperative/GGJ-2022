@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://GUI/WaviclesTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Scenes/Title.gd" type="Script" id=2]
+[ext_resource path="res://GUI/MortalWaveFontTitle.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Sprites/TitleScreen/background.png" type="Texture" id=5]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Button" parent="."]
+margin_left = 215.177
+margin_top = 564.969
+margin_right = 415.177
+margin_bottom = 624.969
+theme = ExtResource( 1 )
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="Button" parent="."]
+margin_left = 846.899
+margin_top = 572.674
+margin_right = 1046.9
+margin_bottom = 632.674
+theme = ExtResource( 1 )
+text = "Credits"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 470.049
+margin_top = 234.081
+margin_right = 780.049
+margin_bottom = 551.081
+theme = ExtResource( 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "wavicle
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_up" from="Play" to="." method="_on_Play_button_up"]
+[connection signal="button_up" from="Credits" to="." method="_on_Credits_button_up"]

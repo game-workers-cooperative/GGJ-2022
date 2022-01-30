@@ -1,0 +1,126 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://GUI/WaviclesTheme.tres" type="Theme" id=2]
+[ext_resource path="res://Sprites/TitleScreen/background.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Credits.gd" type="Script" id=4]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="MadeWith" type="Label" parent="."]
+margin_left = 512.278
+margin_top = 59.1091
+margin_right = 778.278
+margin_bottom = 121.109
+theme = ExtResource( 2 )
+text = "Made with <3 by "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lowercase" type="Label" parent="."]
+margin_left = 309.606
+margin_top = 123.66
+margin_right = 831.606
+margin_bottom = 185.66
+theme = ExtResource( 2 )
+text = "lowercase games     and     friends"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lowercaseMembers" type="Label" parent="."]
+margin_left = 263.295
+margin_top = 209.738
+margin_right = 555.295
+margin_bottom = 596.738
+theme = ExtResource( 2 )
+text = "Rowena Chodkowski
+Mike Ghaussy
+Ryan Masters
+E.J.  McIntyre
+Edward Seymour
+Akshat Shukla"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bario" type="Label" parent="."]
+margin_left = 720.316
+margin_top = 207.056
+margin_right = 1222.32
+margin_bottom = 334.056
+theme = ExtResource( 2 )
+text = "BarioIDL"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BarioLink" type="LinkButton" parent="."]
+margin_left = 718.064
+margin_top = 267.27
+margin_right = 1220.06
+margin_bottom = 329.27
+theme = ExtResource( 2 )
+text = "https://portfolio.barioidl.repl.co/"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Danika" type="Label" parent="."]
+margin_left = 718.534
+margin_top = 344.254
+margin_right = 1220.53
+margin_bottom = 471.254
+theme = ExtResource( 2 )
+text = "Danika Bezuidenhout
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DanikaLink" type="LinkButton" parent="."]
+margin_left = 714.501
+margin_top = 400.904
+margin_right = 1205.5
+margin_bottom = 462.904
+theme = ExtResource( 2 )
+text = "https://spacemermaidinspace.net"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LowercaseLinkButton" type="LinkButton" parent="."]
+margin_left = 461.479
+margin_top = 627.791
+margin_right = 822.479
+margin_bottom = 680.791
+theme = ExtResource( 2 )
+text = "https://lowercase.games"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="Button" parent="."]
+margin_left = 64.0
+margin_top = 621.0
+margin_right = 180.0
+margin_bottom = 680.0
+theme = ExtResource( 2 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_up" from="BackButton" to="." method="_on_BackButton_button_up"]
