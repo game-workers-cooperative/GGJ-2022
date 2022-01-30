@@ -58,6 +58,7 @@ margin_bottom = 68.0
 rect_min_size = Vector2( 75, 50 )
 text = "1"
 script = ExtResource( 2 )
+target_path = "res://levels/level1.tscn"
 
 [node name="2" type="Button" parent="levels"]
 margin_left = 79.0
