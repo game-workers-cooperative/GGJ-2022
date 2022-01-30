@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Objects/walls/Foam/Foam.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/goal.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/gate/GateSet.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/walls/BeamSplitter/WaveSplitter.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objects/Source.tscn" type="PackedScene" id=5]
+[ext_resource path="res://GUI/GUI.tscn" type="PackedScene" id=6]
 
 [node name="Node2D" type="Node2D"]
 
@@ -212,5 +213,11 @@ position = Vector2( 383, 208 )
 
 [node name="WaveSplitter2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 525, 402 )
+
+[node name="Control" parent="." instance=ExtResource( 6 )]
+margin_left = 453.0
+margin_top = 67.0
+margin_right = 453.0
+margin_bottom = 67.0
 
 [editable path="GateSet"]
