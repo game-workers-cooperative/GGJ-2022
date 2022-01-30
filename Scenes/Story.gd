@@ -609,6 +609,9 @@ func advance_chat():
 	text.text = story[current_scene]['chat'][current_message]['text']
 	$Chat/MessageScroller/Messages.add_child(text)
 
+	# move to bottom automatically
+	$Chat/MessageScroller.scroll_vertical = $Chat/MessageScroller.get_v_scrollbar().max_value
+
 func show_scene(scene):
 	# set current scene
 	current_scene = scene
