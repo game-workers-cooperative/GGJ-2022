@@ -26,7 +26,6 @@ position = Vector2( 650, 187 )
 [node name="Source" parent="level" instance=ExtResource( 9 )]
 position = Vector2( 62, 290 )
 collision_layer = 2
-is_wave = true
 
 [node name="WaveSplitter" parent="level" instance=ExtResource( 5 )]
 position = Vector2( 172, 206 )

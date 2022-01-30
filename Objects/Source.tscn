@@ -13,6 +13,7 @@ __meta__ = {
 "_edit_group_": true
 }
 switch = false
+is_wave = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
