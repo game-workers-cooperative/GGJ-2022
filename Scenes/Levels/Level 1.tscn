@@ -11,7 +11,6 @@ position = Vector2( 122, 73 )
 [node name="Source" parent="." instance=ExtResource( 3 )]
 position = Vector2( 72, 236 )
 spinable = false
-is_wave = false
 
 [node name="goal" parent="." instance=ExtResource( 2 )]
 position = Vector2( 394, 52 )

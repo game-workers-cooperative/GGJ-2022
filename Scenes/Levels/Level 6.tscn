@@ -179,25 +179,21 @@ rotation = 1.5708
 [node name="Source" parent="." instance=ExtResource( 1 )]
 position = Vector2( 75, 423 )
 spinable = false
-is_wave = false
 
 [node name="Source2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 438, 325 )
 rotation = 4.71239
 spinable = false
-is_wave = false
 
 [node name="Source3" parent="." instance=ExtResource( 1 )]
 position = Vector2( 515, 325 )
 rotation = 4.71239
 spinable = false
-is_wave = false
 
 [node name="Source4" parent="." instance=ExtResource( 1 )]
 position = Vector2( 516, 123 )
 rotation = 1.5708
 spinable = false
-is_wave = false
 
 [node name="goal" parent="." instance=ExtResource( 4 )]
 position = Vector2( 663, 425 )

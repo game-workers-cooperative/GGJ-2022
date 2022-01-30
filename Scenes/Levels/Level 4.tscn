@@ -170,13 +170,11 @@ shape = SubResource( 2 )
 [node name="Source" parent="." instance=ExtResource( 5 )]
 position = Vector2( 215, 352 )
 spinable = false
-is_wave = false
 
 [node name="Source2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 646, 139 )
 rotation = 3.14159
 spinable = false
-is_wave = false
 
 [node name="WaveSplitter" parent="." instance=ExtResource( 2 )]
 position = Vector2( 371, 244 )

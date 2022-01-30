@@ -6,12 +6,13 @@ var is_wave := false
 onready var ray = $RayCast2D
 onready var waveSprite = $wave
 export (PackedScene) var wavicle = load("res://Objects/wavicle.tscn")
-
+var fromSource = true
 
 var cooldown = 0
 func _ready():
 	add_to_group("wavicle")
-	apply_impulse(Vector2.ZERO, velocity*speed)
+	if fromSource:
+		apply_impulse(Vector2.ZERO, velocity*speed)
 	if is_wave:
 		$particle.set_visible(false)
 		$particle_shape.disabled = true
@@ -79,6 +80,7 @@ func refract():
 func split():
 	cooldown = 50
 	var n = ray.get_collision_normal().normalized()
+
 	var d = linear_velocity
 	var r = d - 2.0*d.dot(n)*n
 	linear_velocity=Vector2.ZERO
@@ -86,16 +88,26 @@ func split():
 
 	if is_wave:
 		var new_wave = wavicle.instance()
+		new_wave.fromSource = false
 		var p = ray.get_collision_point() - (n * 10.0)
 		var theta = d.angle_to(n)
-		var v = asin(1.0*sin(theta))
+		var offset = atan2(d.y, d.x)
+		
+	
+		var v = asin(1.0*sin(theta)) 
+		print(theta)
+		
 
 		new_wave.position = p
-		get_tree().current_scene.call_deferred("add_child",new_wave)
+		
 		new_wave.is_wave = true
 		new_wave.cooldown = 50
-		new_wave.linear_velocity = Vector2.ZERO
-		new_wave.apply_central_impulse(Vector2(cos(v), -sin(v)) * speed)
+		#new_wave.linear_velocity = Vector2.ZERO
+		
+		new_wave.apply_central_impulse( Vector2(cos(v - offset), -sin(v - offset)) * speed)
+		get_tree().current_scene.call_deferred("add_child",new_wave)
+		print("THIS")
+
 
 
 func change_state(value: bool = !is_wave) -> void:
