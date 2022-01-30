@@ -6,8 +6,9 @@ func _ready():
 
 # click play button and transition to the game scene
 func _on_Play_button_up():
-	var target_scene = 'res://Main.tscn'
-	Global.transition(get_tree().current_scene, target_scene, 1, Color.black)
+	Global.current_stage = 0
+	Global.story = 1
+	Global.advance_stage()
 
 func _on_Credits_button_up():
 	var target_scene = 'res://Scenes/Credits.tscn'
