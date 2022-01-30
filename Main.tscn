@@ -40,19 +40,19 @@ rotation = 1.309
 [node name="Glass" parent="level" instance=ExtResource( 6 )]
 position = Vector2( 328, 291 )
 
-[node name="Foam" parent="." instance=ExtResource( 4 )]
-position = Vector2( 172, 409 )
+[node name="GateSet" parent="level" instance=ExtResource( 8 )]
 
-[node name="GateSet" parent="." instance=ExtResource( 8 )]
+[node name="PowerSource" parent="level/GateSet" index="0"]
+position = Vector2( 64, 160 )
 
-[node name="Gate" parent="GateSet" index="0"]
+[node name="EndPoint" parent="level/GateSet" index="1"]
+position = Vector2( 208, 384 )
+
+[node name="Gate" parent="level/GateSet" index="2"]
 position = Vector2( 208, 288 )
 wave_activated = true
 
-[node name="PowerSource" parent="GateSet" index="1"]
-position = Vector2( 64, 160 )
+[node name="Foam" parent="." instance=ExtResource( 4 )]
+position = Vector2( 172, 409 )
 
-[node name="EndPoint" parent="GateSet" index="2"]
-position = Vector2( 208, 384 )
-
-[editable path="GateSet"]
+[editable path="level/GateSet"]

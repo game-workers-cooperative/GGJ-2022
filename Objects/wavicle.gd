@@ -11,7 +11,7 @@ export (PackedScene) var wavicle = load("res://Objects/wavicle.tscn")
 var cooldown = 0
 func _ready():
 	add_to_group("wavicle")
-	apply_impulse(Vector2.ZERO, (velocity.rotated(rotation))*speed)
+	apply_impulse(Vector2.ZERO, velocity*speed)
 	if is_wave:
 		$particle.set_visible(false)
 		$particle_shape.disabled = true
@@ -34,7 +34,7 @@ func _physics_process(delta):
 		ray.enabled = true
 	var v = get_linear_velocity()
 	if (v != Vector2.ZERO):
-		waveSprite.rotation = (atan2(v.y, v.x))
+		rotation = linear_velocity.angle()
 	clock += delta
 	if is_wave:
 		add_to_group('wave')
@@ -52,7 +52,7 @@ func _physics_process(delta):
 			refract()
 		if ray.get_collider().name == "Gate":
 			queue_free()
-			
+	
 			
 func refract():
 	if is_wave:
