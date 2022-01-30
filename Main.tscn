@@ -1,58 +1,13 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://GUI/GUI.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Objects/Flipper.tscn" type="PackedScene" id=2]
-[ext_resource path="res://level.gd" type="Script" id=3]
-[ext_resource path="res://Objects/walls/Foam/Foam.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Objects/walls/BeamSplitter/WaveSplitter.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Objects/walls/RefractGlass/Glass.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Objects/goal.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Objects/gate/GateSet.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Objects/Source.tscn" type="PackedScene" id=9]
+[ext_resource path="res://levels/level1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Main.gd" type="Script" id=10]
 
 [node name="Main" type="Node2D"]
+script = ExtResource( 10 )
+
+[node name="ResourcePreloader" type="ResourcePreloader" parent="."]
+resources = [ PoolStringArray( "level1" ), [ ExtResource( 2 ) ] ]
 
 [node name="Control" parent="." instance=ExtResource( 1 )]
-
-[node name="level" type="Node2D" parent="."]
-script = ExtResource( 3 )
-
-[node name="Flipper" parent="level" instance=ExtResource( 2 )]
-position = Vector2( 115, 216 )
-
-[node name="goal" parent="level" instance=ExtResource( 7 )]
-position = Vector2( 650, 187 )
-
-[node name="Source" parent="level" instance=ExtResource( 9 )]
-position = Vector2( 62, 290 )
-collision_layer = 2
-is_wave = true
-
-[node name="WaveSplitter" parent="level" instance=ExtResource( 5 )]
-position = Vector2( 172, 206 )
-rotation = -0.916298
-split_waves = true
-
-[node name="WaveSplitter2" parent="level" instance=ExtResource( 5 )]
-position = Vector2( 427, 295 )
-rotation = 1.309
-
-[node name="Glass" parent="level" instance=ExtResource( 6 )]
-position = Vector2( 328, 291 )
-
-[node name="GateSet" parent="level" instance=ExtResource( 8 )]
-
-[node name="PowerSource" parent="level/GateSet" index="0"]
-position = Vector2( 64, 160 )
-
-[node name="EndPoint" parent="level/GateSet" index="1"]
-position = Vector2( 208, 384 )
-
-[node name="Gate" parent="level/GateSet" index="2"]
-position = Vector2( 208, 288 )
-wave_activated = true
-
-[node name="Foam" parent="." instance=ExtResource( 4 )]
-position = Vector2( 172, 409 )
-
-[editable path="level/GateSet"]

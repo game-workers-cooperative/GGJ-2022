@@ -1,6 +1,5 @@
 extends StaticBody2D
 
-export (PackedScene) var wave = preload("res://Objects/Wave.tscn")
 onready var point = global_position
 var description:="Foam: Blocks all types of signal"
 export var movable := false

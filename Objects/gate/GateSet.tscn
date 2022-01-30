@@ -28,6 +28,8 @@ texture = ExtResource( 1 )
 
 [node name="Gate" type="Area2D" parent="." groups=["drag"]]
 script = ExtResource( 2 )
+particle_activated = true
+wave_activated = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gate"]
 shape = SubResource( 1 )
