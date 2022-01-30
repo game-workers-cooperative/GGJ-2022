@@ -25,7 +25,7 @@ func _shape_entered(body_rid, body, body_shape_index, local_shape_index):
 		if local_shape_index == goal_id:
 			if switch or body.is_wave == use_wave:
 				amount +=1
-				if amount >100:
+				if amount >30:
 					done()
 
 func done():
