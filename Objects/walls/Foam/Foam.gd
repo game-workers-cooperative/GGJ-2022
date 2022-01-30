@@ -2,9 +2,9 @@ extends StaticBody2D
 
 export (PackedScene) var wave = preload("res://Objects/Wave.tscn")
 onready var point = global_position
-var description:="Blocks all types of signal"
-export var movable := true
-export var spinable := true
+var description:="Foam: Blocks all types of signal"
+export var movable := false
+export var spinable := false
 
 func _ready():
 	add_to_group("drag")
