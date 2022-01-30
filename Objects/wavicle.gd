@@ -7,6 +7,7 @@ onready var ray = $RayCast2D
 onready var waveSprite = $wave
 export (PackedScene) var wavicle = load("res://Objects/wavicle.tscn")
 
+
 var cooldown = 0
 func _ready():
 	add_to_group("wavicle")
@@ -52,6 +53,7 @@ func _physics_process(delta):
 		if ray.get_collider().name == "Gate":
 			queue_free()
 			
+			
 func refract():
 	if is_wave:
 		cooldown = 50
@@ -73,6 +75,7 @@ func refract():
 	else:
 		queue_free()
 
+
 func split():
 	cooldown = 50
 	var n = ray.get_collision_normal().normalized()
@@ -93,9 +96,7 @@ func split():
 		new_wave.cooldown = 50
 		new_wave.linear_velocity = Vector2.ZERO
 		new_wave.apply_central_impulse(Vector2(cos(v), -sin(v)) * speed)
-		
-		
-	
+
 
 func change_state(value: bool = !is_wave) -> void:
 	is_wave = value
@@ -105,9 +106,9 @@ func change_state(value: bool = !is_wave) -> void:
 	$wave.set_visible(is_wave)
 	$wave_shape.disabled = !is_wave
 
+
 func _screen_exited():
 	queue_free()
-
 
 
 func _on_wavicle_body_entered(body):

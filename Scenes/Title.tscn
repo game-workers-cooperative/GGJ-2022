@@ -1,13 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://GUI/WaviclesTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Scenes/Title.gd" type="Script" id=2]
-[ext_resource path="res://GUI/MortalWaveFont.tres" type="DynamicFont" id=3]
 [ext_resource path="res://GUI/MortalWaveFontTitle.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Sprites/TitleScreen/background.png" type="Texture" id=5]
-
-[sub_resource type="Theme" id=1]
-default_font = ExtResource( 3 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
@@ -25,7 +21,7 @@ margin_left = 215.177
 margin_top = 564.969
 margin_right = 415.177
 margin_bottom = 624.969
-theme = SubResource( 1 )
+theme = ExtResource( 1 )
 text = "Play"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -51,6 +47,7 @@ theme = ExtResource( 1 )
 custom_fonts/font = ExtResource( 4 )
 text = "wavicle
 "
+percent_visible = -0.125
 __meta__ = {
 "_edit_use_anchors_": false
 }
