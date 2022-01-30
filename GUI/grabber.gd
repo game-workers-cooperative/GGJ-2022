@@ -37,14 +37,36 @@ func _physics_process(delta):
 			block.rotation = spin_dir.angle()
 
 var text =""
-func _body_entered(body):
-	if body.is_in_group("drag"):
-		block = body
-		print(block)
-		timer = 30
-		$cursor/tutorial.text = block.get("description")
-func _body_exited(body):
+
+func handle_object_entry(body):
+	block = body
+	print(block)
+	timer = 30
+	$cursor/tutorial.text = block.get("description")
+	
+	
+func handle_object_exit(body):
 	if body.is_in_group("drag"):
 		if body == block:
 			$cursor/tutorial.visible = false
 			block = null
+
+
+func _body_entered(body):
+	if body.is_in_group("drag"):
+		handle_object_entry(body)
+		
+		
+func _body_exited(body):
+	if body.is_in_group("drag"):
+		handle_object_exit(body)
+
+
+
+func _on_grabber_area_entered(area):
+	if area.is_in_group("drag"):
+		handle_object_entry(area)
+
+func _on_grabber_area_exited(area):
+	if area.is_in_group("drag"):
+		handle_object_exit(area)

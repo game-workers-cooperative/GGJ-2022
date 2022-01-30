@@ -7,10 +7,11 @@ onready var ray = $RayCast2D
 onready var waveSprite = $wave
 export (PackedScene) var wavicle = load("res://Objects/wavicle.tscn")
 
+
 var cooldown = 0
 func _ready():
 	add_to_group("wavicle")
-	apply_impulse(Vector2.ZERO, (velocity.rotated(rotation))*speed)
+	apply_impulse(Vector2.ZERO, velocity*speed)
 	if is_wave:
 		$particle.set_visible(false)
 		$particle_shape.disabled = true
@@ -33,7 +34,7 @@ func _physics_process(delta):
 		ray.enabled = true
 	var v = get_linear_velocity()
 	if (v != Vector2.ZERO):
-		waveSprite.rotation = (atan2(v.y, v.x))
+		rotation = linear_velocity.angle()
 	clock += delta
 	if is_wave:
 		add_to_group('wave')
@@ -49,6 +50,9 @@ func _physics_process(delta):
 			split()
 		if ray.get_collider().name == "RefractGlassArea":
 			refract()
+		if ray.get_collider().name == "Gate":
+			queue_free()
+	
 			
 func refract():
 	if is_wave:
@@ -67,9 +71,10 @@ func refract():
 		new_wave.is_wave = true
 		new_wave.cooldown = 50
 		new_wave.linear_velocity = Vector2.ZERO
-		new_wave.apply_central_impulse(Vector2(cos(v), -sin(v)) * speed)
+		new_wave.apply_central_impulse(Vector2(cos(v), -sin(v)) * speed / 2)
 	else:
 		queue_free()
+
 
 func split():
 	cooldown = 50
@@ -91,9 +96,7 @@ func split():
 		new_wave.cooldown = 50
 		new_wave.linear_velocity = Vector2.ZERO
 		new_wave.apply_central_impulse(Vector2(cos(v), -sin(v)) * speed)
-		
-		
-	
+
 
 func change_state(value: bool = !is_wave) -> void:
 	is_wave = value
@@ -103,9 +106,9 @@ func change_state(value: bool = !is_wave) -> void:
 	$wave.set_visible(is_wave)
 	$wave_shape.disabled = !is_wave
 
+
 func _screen_exited():
 	queue_free()
-
 
 
 func _on_wavicle_body_entered(body):
