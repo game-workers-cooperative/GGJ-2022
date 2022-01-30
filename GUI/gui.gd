@@ -1,33 +1,38 @@
 extends Control
 onready var map = get_tree()
-
+var pause_able = false
 func ready():
 	#set_as_toplevel(true)
-	clear()
+	pass
 
 func _input(_event):
 	if Input.get_action_strength("ui_cancel"):
-		pause()
+		if pause_able:
+			pause()
 
 func clear():
+	pause_able = true
 	map.set_pause(false)
 	$"main menu".visible = false
-	$creators.visible = false
+	$makers.visible = false
 	$"pause menu".visible = false
 	$"game over".visible = false
+	$"level selector".visible = false
 
 func makers():
 	clear()
 	$makers.visible = true
+	pause_able = false
 
 func start():
 	clear()
 	$"main menu".visible = true
-	#map.set_pause(true)
+	pause_able = false
 
 func pause():
 	clear()
 	$"pause menu".visible = true
+	pause_able = false
 	map.set_pause(true)
 
 func unpause():
@@ -38,12 +43,15 @@ func die():
 	clear()
 	$"game over".visible = true
 	map.set_pause(true)
+	pause_able = false
 
 
 func new_game():
-	get_tree().change_scene("res://hub.tscn")
 	map.set_pause(false)
 	clear()
+	get_parent().change_level(0)
+	#$"level selector".visible = true
+	pause_able = false
 
 func restart():
 	map.reload_current_scene()

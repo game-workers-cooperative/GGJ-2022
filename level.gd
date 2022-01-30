@@ -6,4 +6,4 @@ func goals(mode):
 	if difficulty ==0:
 		level_completed()
 func level_completed():
-	print("done")
+	queue_free()
