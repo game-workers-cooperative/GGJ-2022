@@ -397,10 +397,6 @@ var story = {
 			},
 			{
 				'speaker': 'Output',
-				'text': 'Get better priorities'
-			},
-			{
-				'speaker': 'Output',
 				'text': 'if ur doing the work ur in charge'
 			},
 			{
@@ -447,6 +443,10 @@ var story = {
 			{
 				'speaker': 'Output',
 				'text': 'Whats this one'
+			},
+			{
+				'speaker': '',
+				'text': 'res://Sprites/Story/un-edited.png'
 			},
 			{
 				'speaker': 'Input',
@@ -609,7 +609,7 @@ var scrollable = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	show_scene(9)
+	pass
 
 func _process(delta):
 	if !scrollable:
@@ -654,6 +654,7 @@ func get_resized_texture(t: Texture, width: int = 0, height: int = 0):
 	return itex
 
 func show_scene(scene):
+	print('showing story scene ', scene)
 	# set current scene
 	current_scene = scene
 	current_message = 0
@@ -673,10 +674,11 @@ func show_scene(scene):
 
 # make next button advance the chat or move to next level
 func _on_Next_button_up():
-	# advance chat if possible
-	if story[current_scene]['chat'].size() - 1 > current_message:
+	# advance chat if possible otherwise advance stage
+	print('current scene ', current_scene, ' current_message ', current_message)
+	if story.has(current_scene) and story[current_scene]['chat'].size() - 1 > current_message:
 		current_message += 1
 		advance_chat()
 	else:
-		# @todo make this move to the next level
-		show_scene(current_scene + 1)
+		Global.advance_stage()
+

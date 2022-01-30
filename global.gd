@@ -1,8 +1,33 @@
 extends Node
 
+var story = 0
+var current_stage = 0
+var stages = [
+	#'res://Scenes/Levels/Level 1.tscn',
+	'res://Scenes/Story.tscn',
+	'res://Scenes/Story.tscn',
+	'res://Scenes/Story.tscn',
+	'res://Scenes/Story.tscn',
+	'res://Scenes/Story.tscn',
+	'res://Scenes/Story.tscn',
+	'res://Scenes/Story.tscn',
+	'res://Scenes/Story.tscn',
+	'res://Scenes/Story.tscn',
+	'res://Scenes/Story.tscn',
+	'res://Scenes/Story.tscn',
+	'res://Scenes/Story.tscn',
+	'res://Scenes/Story.tscn',
+	'res://Scenes/Story.tscn',
+	'res://Scenes/Credits.tscn'
+]
+
+func advance_stage():
+	print('advancing to stage ', current_stage, ' ', stages[current_stage], ' out of ', stages.size())
+	Global.transition(get_tree().current_scene, stages[current_stage], 1, Color.black)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 func transition(from, to, duration, color):
 	var rootControl = CanvasLayer.new()
@@ -32,3 +57,12 @@ func transition(from, to, duration, color):
 
 	get_tree().set_current_scene(new_scene)
 	rootControl.queue_free()
+
+	print(stages[current_stage])
+	if range(stages.size()).has(current_stage) \
+		and stages[current_stage] == 'res://Scenes/Story.tscn' \
+		and get_tree().current_scene.story.has(story):
+			get_tree().current_scene.show_scene(story)
+			story += 1
+
+	current_stage += 1

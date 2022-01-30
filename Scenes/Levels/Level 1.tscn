@@ -1,0 +1,121 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Objects/walls/BeamSplitter/WaveSplitter.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/goal.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Source.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/walls/Foam/Foam.tscn" type="PackedScene" id=4]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 122, 73 )
+
+[node name="Source" parent="." instance=ExtResource( 3 )]
+position = Vector2( 72, 236 )
+spinable = false
+is_wave = false
+
+[node name="goal" parent="." instance=ExtResource( 2 )]
+position = Vector2( 394, 52 )
+rotation = 4.71239
+
+[node name="WaveSplitter" parent="." instance=ExtResource( 1 )]
+position = Vector2( 104, 92 )
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="Foam" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 440, 113 )
+
+[node name="Foam2" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 440, 177 )
+
+[node name="Foam6" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 588, 177 )
+
+[node name="Foam7" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 588, 112 )
+
+[node name="Foam8" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 588, 242 )
+
+[node name="Foam9" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 588, 306 )
+
+[node name="Foam17" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 156, 181 )
+rotation = -3.14159
+
+[node name="Foam18" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 156, 116 )
+rotation = -3.14159
+
+[node name="Foam19" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 156, 246 )
+rotation = -3.14159
+
+[node name="Foam20" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 156, 310 )
+rotation = -3.14159
+
+[node name="Foam3" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 187, 263 )
+rotation = -1.5708
+
+[node name="Foam4" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 251, 263 )
+rotation = -1.5708
+
+[node name="Foam10" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 564, 80 )
+rotation = -1.5708
+
+[node name="Foam11" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 500, 80 )
+rotation = -1.5708
+
+[node name="Foam12" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 436, 80 )
+rotation = -1.5708
+
+[node name="Foam13" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 372, 80 )
+rotation = -1.5708
+
+[node name="Foam14" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 308, 80 )
+rotation = -1.5708
+
+[node name="Foam15" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 244, 80 )
+rotation = -1.5708
+
+[node name="Foam16" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 180, 80 )
+rotation = -1.5708
+
+[node name="Foam21" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 566, 344 )
+rotation = 1.5708
+
+[node name="Foam22" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 502, 344 )
+rotation = 1.5708
+
+[node name="Foam23" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 438, 344 )
+rotation = 1.5708
+
+[node name="Foam24" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 374, 344 )
+rotation = 1.5708
+
+[node name="Foam25" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 310, 344 )
+rotation = 1.5708
+
+[node name="Foam26" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 246, 344 )
+rotation = 1.5708
+
+[node name="Foam27" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( 182, 344 )
+rotation = 1.5708

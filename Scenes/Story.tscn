@@ -90,9 +90,9 @@ __meta__ = {
 
 [node name="Chat" type="Panel" parent="."]
 margin_left = 647.0
-margin_top = 317.0
-margin_right = 1252.0
-margin_bottom = 700.0
+margin_top = 315.0
+margin_right = 1250.0
+margin_bottom = 693.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
