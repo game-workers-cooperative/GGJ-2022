@@ -12,7 +12,7 @@ func _input(_event):
 func clear():
 	map.set_pause(false)
 	$"main menu".visible = false
-	$creators.visible = false
+	$makers.visible = false
 	$"pause menu".visible = false
 	$"game over".visible = false
 
@@ -41,7 +41,7 @@ func die():
 
 
 func new_game():
-	get_tree().change_scene("res://hub.tscn")
+	get_tree().change_scene("res://levels/level selector.tscn")
 	map.set_pause(false)
 	clear()
 
