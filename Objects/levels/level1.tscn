@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Objects/walls/RefractGlass/Glass.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/walls/BeamSplitter/WaveSplitter.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Flipper.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/goal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Source.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/gate/GateSet.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/walls/Foam/Foam.tscn" type="PackedScene" id=7]
+[ext_resource path="res://level.gd" type="Script" id=14]
+
+[node name="level" type="Node2D"]
+z_index = -4
+script = ExtResource( 14 )
+
+[node name="Flipper" parent="." instance=ExtResource( 3 )]
+position = Vector2( 864, 384 )
+
+[node name="goal" parent="." instance=ExtResource( 4 )]
+position = Vector2( 784, 512 )
+
+[node name="Source" parent="." instance=ExtResource( 5 )]
+position = Vector2( 608, 376 )
+collision_layer = 2
+is_wave = true
+
+[node name="WaveSplitter" parent="." instance=ExtResource( 2 )]
+position = Vector2( 376, 232 )
+rotation = -0.916298
+split_waves = true
+
+[node name="WaveSplitter2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 608, 592 )
+rotation = 1.309
+
+[node name="Glass" parent="." instance=ExtResource( 1 )]
+position = Vector2( 384, 528 )
+
+[node name="GateSet" parent="." instance=ExtResource( 6 )]
+
+[node name="PowerSource" parent="GateSet" index="0"]
+position = Vector2( 560, 168 )
+
+[node name="Gate" parent="GateSet" index="2"]
+position = Vector2( 712, 232 )
+
+[node name="Foam" parent="." instance=ExtResource( 7 )]
+position = Vector2( 368, 392 )
+
+[editable path="GateSet"]
