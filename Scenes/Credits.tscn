@@ -56,14 +56,47 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="FriendsMembers" type="Label" parent="."]
+[node name="Bario" type="Label" parent="."]
 margin_left = 720.316
-margin_top = 203.492
+margin_top = 207.056
 margin_right = 1222.32
-margin_bottom = 330.492
+margin_bottom = 334.056
 theme = ExtResource( 2 )
-text = "BarioIDL
-https://portfolio.barioidl.repl.co/"
+text = "BarioIDL"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BarioLink" type="LinkButton" parent="."]
+margin_left = 718.064
+margin_top = 267.27
+margin_right = 1220.06
+margin_bottom = 329.27
+theme = ExtResource( 2 )
+text = "https://portfolio.barioidl.repl.co/"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Danika" type="Label" parent="."]
+margin_left = 718.534
+margin_top = 344.254
+margin_right = 1220.53
+margin_bottom = 471.254
+theme = ExtResource( 2 )
+text = "Danika Bezuidenhout
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DanikaLink" type="LinkButton" parent="."]
+margin_left = 714.501
+margin_top = 400.904
+margin_right = 1205.5
+margin_bottom = 462.904
+theme = ExtResource( 2 )
+text = "https://spacemermaidinspace.net"
 __meta__ = {
 "_edit_use_anchors_": false
 }
