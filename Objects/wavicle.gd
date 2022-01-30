@@ -49,6 +49,8 @@ func _physics_process(delta):
 			split()
 		if ray.get_collider().name == "RefractGlassArea":
 			refract()
+		if ray.get_collider().name == "Gate":
+			queue_free()
 			
 func refract():
 	if is_wave:
@@ -67,7 +69,7 @@ func refract():
 		new_wave.is_wave = true
 		new_wave.cooldown = 50
 		new_wave.linear_velocity = Vector2.ZERO
-		new_wave.apply_central_impulse(Vector2(cos(v), -sin(v)) * speed)
+		new_wave.apply_central_impulse(Vector2(cos(v), -sin(v)) * speed / 2)
 	else:
 		queue_free()
 
